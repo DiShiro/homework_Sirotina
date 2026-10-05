@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Анфиса для друзей. Каталог мороженого{% endblock %}
+
+{% block content %}
+  <h1 class="mb-4">Каталог мороженого</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for ice_cream in ice_cream_list %}
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ ice_cream.title }}</h5>
+            <p class="card-text">{{ ice_cream.description|truncatewords:10 }}</p>
+            <a class="btn btn-outline-primary mt-auto"
+               href="{% url 'ice_cream:ice_cream_detail' ice_cream.id %}">
+              Подробнее
+            </a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>Пока ничего нет.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

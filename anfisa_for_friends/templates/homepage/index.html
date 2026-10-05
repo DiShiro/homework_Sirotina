@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Анфиса для друзей. Главная{% endblock %}
+
+{% block content %}
+  <div class="text-center py-5">
+    <h1 class="display-5 mb-3">Добро пожаловать!</h1>
+    <p class="lead mb-4">Здесь живёт самое вкусное мороженое для настоящих друзей.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'ice_cream:ice_cream_list' %}">
+      Смотреть каталог
+    </a>
+  </div>
+{% endblock %}

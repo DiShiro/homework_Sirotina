@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Анфиса для друзей. {{ ice_cream.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ ice_cream.title }}</h1>
+  <p class="lead">{{ ice_cream.description }}</p>
+  <a class="btn btn-secondary" href="{% url 'ice_cream:ice_cream_list' %}">
+    ← В каталог
+  </a>
+{% endblock %}
