@@ -8,10 +8,10 @@
   <title>{% block title %}Анфиса для друзей{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   {% include "includes/header.html" %}
 
-  <main class="container pt-4 pb-5">
+  <main class="container py-4 flex-grow-1">
     {% block content %}{% endblock %}
   </main>
 

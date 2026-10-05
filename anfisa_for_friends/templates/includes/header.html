@@ -1,25 +1,26 @@
 {% load static %}
-<header class="bg-primary">
-  <nav class="navbar navbar-expand-lg navbar-dark container">
-    <a class="navbar-brand" href="{% url 'homepage:index' %}">
-      <img src="{% static 'img/logo.png' %}" height="40" alt="Анфиса для друзей">
-    </a>
+<header class="bg-white border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light container">
 
     {% with view_name=request.resolver_match.view_name %}
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link {% if view_name == 'homepage:index' %}active{% endif %}"
+      <ul class="navbar-nav me-auto flex-row">
+        <li class="nav-item me-2">
+          <a class="nav-link px-3 {% if view_name == 'homepage:index' %}btn btn-primary text-white{% endif %}"
              href="{% url 'homepage:index' %}">Главная</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {% if view_name == 'ice_cream:ice_cream_list' or view_name == 'ice_cream:ice_cream_detail' %}active{% endif %}"
+        <li class="nav-item me-2">
+          <a class="nav-link px-3 {% if view_name == 'ice_cream:ice_cream_list' or view_name == 'ice_cream:ice_cream_detail' %}btn btn-primary text-white{% endif %}"
              href="{% url 'ice_cream:ice_cream_list' %}">Каталог мороженого</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link {% if view_name == 'about:description' %}active{% endif %}"
+        <li class="nav-item me-2">
+          <a class="nav-link px-3 {% if view_name == 'about:description' %}btn btn-primary text-white{% endif %}"
              href="{% url 'about:description' %}">О проекте</a>
         </li>
       </ul>
     {% endwith %}
+
+    <a class="navbar-brand ms-auto" href="{% url 'homepage:index' %}">
+      <img src="{% static 'img/logo.png' %}" height="40" alt="Анфиса для друзей">
+    </a>
   </nav>
 </header>
